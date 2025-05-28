@@ -1,0 +1,1431 @@
+TLC2 Version 2.20 of Day Month 20?? (rev: bacd9d2)
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 107 and seed -520418769008404522 with 1 worker on 4 cores with 3936MB heap and 64MB offheap memory [pid: 31994] (Linux 6.11.0-26-generic amd64, Oracle Corporation 23.0.2 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file /home/fabio-dollaku/Desktop/raft.tla/raft_0240655845.tla
+Parsing file /tmp/tlc-14515568715655355890/Naturals.tla (jar:file:/home/fabio-dollaku/Desktop/raft.tla/tla2tools.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /tmp/tlc-14515568715655355890/FiniteSets.tla (jar:file:/home/fabio-dollaku/Desktop/raft.tla/tla2tools.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /tmp/tlc-14515568715655355890/Sequences.tla (jar:file:/home/fabio-dollaku/Desktop/raft.tla/tla2tools.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /tmp/tlc-14515568715655355890/TLC.tla (jar:file:/home/fabio-dollaku/Desktop/raft.tla/tla2tools.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /tmp/tlc-14515568715655355890/_TLCTrace.tla (jar:file:/home/fabio-dollaku/Desktop/raft.tla/tla2tools.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /tmp/tlc-14515568715655355890/TLCExt.tla (jar:file:/home/fabio-dollaku/Desktop/raft.tla/tla2tools.jar!/tla2sany/StandardModules/TLCExt.tla)
+Parsing file /tmp/tlc-14515568715655355890/Integers.tla (jar:file:/home/fabio-dollaku/Desktop/raft.tla/tla2tools.jar!/tla2sany/StandardModules/Integers.tla)
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Integers
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module raft_0240655845
+Starting... (2025-05-28 11:20:43)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2025-05-28 11:20:43.
+Progress(20) at 2025-05-28 11:20:46: 32,895 states generated (32,895 s/min), 8,153 distinct states found (8,153 ds/min), 2,618 states left on queue.
+Error: Invariant LeaderCommitted is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ messages = <<>>
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = (r1 :> <<>> @@ r2 :> <<>> @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = <<>>
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 0
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = <<>>
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 2: <MySwitchNext line 530, col 11 to line 530, col 93 of module raft_0240655845>
+/\ messages = <<>>
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = (r1 :> <<>> @@ r2 :> <<>> @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = <<>>
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 1
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = (v1 :> [term |-> 2, value |-> v1, payload |-> v1])
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 3: <MySwitchNext line 530, col 11 to line 530, col 93 of module raft_0240655845>
+/\ messages = <<>>
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = (r1 :> <<>> @@ r2 :> <<>> @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = <<>>
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 4: <MySwitchNext line 532, col 11 to line 532, col 89 of module raft_0240655845>
+/\ messages = <<>>
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = (r1 :> <<>> @@ r2 :> <<>> @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = <<>>
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {v1} @@ r3 :> {} @@ r4 :> {})
+
+State 5: <MySwitchNext line 532, col 11 to line 532, col 89 of module raft_0240655845>
+/\ messages = <<>>
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = (r1 :> <<>> @@ r2 :> <<>> @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = <<>>
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {v1, v2} @@ r3 :> {} @@ r4 :> {})
+
+State 6: <MySwitchNext line 534, col 11 to line 534, col 118 of module raft_0240655845>
+/\ messages = <<>>
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> @@
+  r3 :> <<>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = (<<1, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE])
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {v2} @@ r3 :> {} @@ r4 :> {})
+
+State 7: <MySwitchNext line 534, col 11 to line 534, col 118 of module raft_0240655845>
+/\ messages = <<>>
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE] @@
+  <<2, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 8: <MySwitchNext line 538, col 11 to line 538, col 60 of module raft_0240655845>
+/\ messages = ( [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] @@
+  <<2, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 9: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] @@
+  <<2, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 10: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] @@
+  <<2, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {v1} @@ r4 :> {})
+
+State 11: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] @@
+  <<2, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 12: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] @@
+  <<2, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 13: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> FALSE] @@
+  <<2, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 14: <MySwitchNext line 536, col 11 to line 536, col 49 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 0, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 15: <MySwitchNext line 538, col 11 to line 538, col 60 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 16: <MySwitchNext line 538, col 11 to line 538, col 60 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r4,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 1 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 17: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v2]>> ] :>
+      1 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r4,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 1 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 18: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v2]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r4,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 1 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {v2} @@ r4 :> {})
+
+State 19: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v2]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r4,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 1 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 20: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v2]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 2 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r4,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 1 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 21: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v2]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r4,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      1 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 2 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r4,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 1 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 22: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v2]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r4,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 2 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r4,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 1 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r4 :> <<>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {v1})
+
+State 23: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v2]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r4,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 2 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r4,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 1 ] :>
+      1 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r4 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 0)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+State 24: <MySwitchNext line 540, col 11 to line 541, col 106 of module raft_0240655845>
+/\ messages = ( [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v2]>> ] :>
+      0 @@
+  [ mtype |-> RecoveryRequest,
+    mterm |-> 2,
+    msource |-> r4,
+    mdest |-> r2,
+    mentries |-> <<[term |-> 2, value |-> v1]>> ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r3,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 2 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesResponse,
+    mterm |-> 2,
+    msource |-> r4,
+    mdest |-> r2,
+    msuccess |-> TRUE,
+    mmatchIndex |-> 1 ] :>
+      1 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 0 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r3,
+    mprevLogIndex |-> 1,
+    mprevLogTerm |-> 2,
+    mentries |-> <<[term |-> 2, value |-> v2]>>,
+    mcommitIndex |-> 1 ] :>
+      0 @@
+  [ mtype |-> AppendEntriesRequest,
+    mterm |-> 2,
+    msource |-> r2,
+    mdest |-> r4,
+    mprevLogIndex |-> 0,
+    mprevLogTerm |-> 0,
+    mentries |-> <<[term |-> 2, value |-> v1]>>,
+    mcommitIndex |-> 1 ] :>
+      0 )
+/\ matchIndex = ( r1 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r2 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 1 @@ r4 :> 0) @@
+  r3 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) @@
+  r4 :> (r1 :> 0 @@ r2 :> 0 @@ r3 :> 0 @@ r4 :> 0) )
+/\ log = ( r1 :> <<>> @@
+  r2 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r3 :>
+      << [term |-> 2, value |-> v1, payload |-> v1],
+         [term |-> 2, value |-> v2, payload |-> v2] >> @@
+  r4 :> <<[term |-> 2, value |-> v1, payload |-> v1]>> )
+/\ switchSentRecord = (r1 :> {} @@ r2 :> {<<v1, 2>>, <<v2, 2>>} @@ r3 :> {} @@ r4 :> {})
+/\ state = (r1 :> Switch @@ r2 :> Leader @@ r3 :> Follower @@ r4 :> Follower)
+/\ Servers = {r2, r3, r4}
+/\ leaderCount = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 0 @@ r4 :> 0)
+/\ entryCommitStats = ( <<1, 2>> :> [sentCount |-> 1, ackCount |-> 1, committed |-> TRUE] @@
+  <<2, 2>> :> [sentCount |-> 1, ackCount |-> 0, committed |-> FALSE] )
+/\ commitIndex = (r1 :> 0 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1)
+/\ currentTerm = (r1 :> 2 @@ r2 :> 2 @@ r3 :> 2 @@ r4 :> 2)
+/\ votesResponded = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchIndex = r1
+/\ maxc = 2
+/\ nextIndex = ( r1 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r2 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 2 @@ r4 :> 1) @@
+  r3 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) @@
+  r4 :> (r1 :> 1 @@ r2 :> 1 @@ r3 :> 1 @@ r4 :> 1) )
+/\ votesGranted = (r1 :> {} @@ r2 :> {r3, r4} @@ r3 :> {} @@ r4 :> {})
+/\ switchBuffer = ( v1 :> [term |-> 2, value |-> v1, payload |-> v1] @@
+  v2 :> [term |-> 2, value |-> v2, payload |-> v2] )
+/\ voterLog = (r1 :> <<>> @@ r2 :> (r3 :> <<>> @@ r4 :> <<>>) @@ r3 :> <<>> @@ r4 :> <<>>)
+/\ votedFor = (r1 :> r2 @@ r2 :> Nil @@ r3 :> r2 @@ r4 :> r2)
+/\ unorderedRequests = (r1 :> {} @@ r2 :> {} @@ r3 :> {} @@ r4 :> {})
+
+173183 states generated, 40155 distinct states found, 13051 states left on queue.
+The depth of the complete state graph search is 24.
+Finished in 11s at (2025-05-28 11:20:54)
+Trace exploration spec path: ./raft_0240655845_TTrace_1748424042.tla
